@@ -17,6 +17,11 @@ a wrong way or possibly the Ldap server doesn't report the encoding properly.
 It is at any rate necessary to convert the dumped file with
 `iconv -f latin1 -t utf-8 FILE`.
 
+UPDATE: the encoding issue got more interesting: to achieve a proper
+encoding I had to pipe through `json_pp`, write to a file, and then use
+`iconv -f latin1 -t utf-8 FILE`.
+
+
 One way to run this is something link `MADEKSVC_PASSWORD='***' lein run`. 
 
 
